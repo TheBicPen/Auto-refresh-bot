@@ -14,18 +14,28 @@ namespace BC_Green_Games_Vote_Manipulator
     {
         int timeRemaining;
         int interval;
+        Uri uri;
         public Form1()
         {
             InitializeComponent();
             textBox1.Text = "https://www.bcgreengames.ca/vote/entityform/2199/1/vote/alternate/lXzxzSeOs71jxeGK27YQIIPSTI2kiL6ZQ2qDXKOQnu8/ajax";
             textBox2.Text = "300";
+
+            interval = int.Parse(textBox2.Text);
+            Uri uri2 = new Uri(textBox1.Text);
+            webBrowser1.Url = uri2;
+
+            label2.Text = interval.ToString();
+          //  label3.Text = webBrowser1.Url.ToString();
+
             webBrowser1.Refresh();
+            timeRemaining = interval;
 
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timeRemaining -= 1;
+            timeRemaining --;
             label1.Text = timeRemaining.ToString();
             if(timeRemaining <= 0)
             {
@@ -41,7 +51,7 @@ namespace BC_Green_Games_Vote_Manipulator
 
         private void button2_Click(object sender, EventArgs e)
         {
-            interval = int.Parse(textBox2.Text) * 1000;
+            interval = int.Parse(textBox2.Text);
             timer1.Interval = interval;
             label2.Text = timer1.Interval.ToString();
         }
