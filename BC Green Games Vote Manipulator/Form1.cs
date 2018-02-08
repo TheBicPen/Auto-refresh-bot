@@ -26,7 +26,7 @@ namespace BC_Green_Games_Vote_Manipulator
         private void timer1_Tick(object sender, EventArgs e)
         {
             timeRemaining -= 1;
-            label1.Text = timeRemaining;
+            label1.Text = timeRemaining.ToString();
             if(timeRemaining <= 0)
             {
                 webBrowser1.Refresh();
