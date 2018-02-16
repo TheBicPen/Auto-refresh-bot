@@ -14,6 +14,7 @@ namespace BC_Green_Games_Vote_Manipulator
     {
         int timeRemaining;
         int interval;
+        int timesVoted;
         public Form1()
         {
             InitializeComponent();
@@ -24,22 +25,21 @@ namespace BC_Green_Games_Vote_Manipulator
             Uri uri2 = new Uri(textBox1.Text);
             webBrowser1.Url = uri2;
 
-            label2.Text = interval.ToString();
-          //  label3.Text = webBrowser1.Url.ToString();
+            label2.Text = "Current Refresh Interval:" + interval.ToString();
 
-            webBrowser1.Refresh();
-            timeRemaining = interval;
-
+            timeRemaining = 0;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             timeRemaining --;
-            label1.Text = timeRemaining.ToString();
+            label1.Text = "Time remaining until refresh:" + timeRemaining.ToString();
             if(timeRemaining <= 0)
             {
                 webBrowser1.Refresh();
                 timeRemaining = interval;
+                timesVoted++;
+                textBox3.AppendText(string.Format(System.Environment.NewLine + "Sent {0}", timesVoted));
             }
         }
 
@@ -52,8 +52,19 @@ namespace BC_Green_Games_Vote_Manipulator
         private void button2_Click(object sender, EventArgs e)
         {
             interval = int.Parse(textBox2.Text);
-            timer1.Interval = interval;
-            label2.Text = timer1.Interval.ToString();
+            label2.Text = "Current Refresh Interval:" + interval.ToString();
+            timeRemaining = interval;
+
+        }
+
+        private void webBrowser1_FileDownload(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            label3.Text = "Current URL: " + webBrowser1.Url.ToString();
         }
     }
 }
