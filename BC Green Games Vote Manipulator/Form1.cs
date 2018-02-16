@@ -14,7 +14,6 @@ namespace BC_Green_Games_Vote_Manipulator
     {
         int timeRemaining;
         int interval;
-        Uri uri;
         public Form1()
         {
             InitializeComponent();
@@ -40,6 +39,7 @@ namespace BC_Green_Games_Vote_Manipulator
             if(timeRemaining <= 0)
             {
                 webBrowser1.Refresh();
+                timeRemaining = interval;
             }
         }
 

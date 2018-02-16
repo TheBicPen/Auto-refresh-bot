@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -44,17 +45,17 @@
             // 
             this.webBrowser1.AllowNavigation = false;
             this.webBrowser1.AllowWebBrowserDrop = false;
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 207);
+            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.webBrowser1.Location = new System.Drawing.Point(12, 149);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(466, 154);
+            this.webBrowser1.Size = new System.Drawing.Size(200, 200);
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.WebBrowserShortcutsEnabled = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(379, 12);
+            this.button1.Location = new System.Drawing.Point(297, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -72,12 +73,12 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 14);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(361, 20);
+            this.textBox1.Size = new System.Drawing.Size(279, 20);
             this.textBox1.TabIndex = 2;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(267, 41);
+            this.button2.Location = new System.Drawing.Point(185, 41);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(187, 22);
             this.button2.TabIndex = 3;
@@ -89,7 +90,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(12, 43);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(249, 20);
+            this.textBox2.Size = new System.Drawing.Size(167, 20);
             this.textBox2.TabIndex = 4;
             // 
             // label1
@@ -123,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 361);
+            this.ClientSize = new System.Drawing.Size(384, 361);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -132,8 +133,9 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.webBrowser1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Auto-Refresh";
             this.ResumeLayout(false);
             this.PerformLayout();
 
