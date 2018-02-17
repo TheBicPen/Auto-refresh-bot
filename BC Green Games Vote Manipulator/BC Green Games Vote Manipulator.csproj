@@ -55,7 +55,8 @@
     <ManifestCertificateThumbprint>F2F73D63941C97EEF6ABD46091067D65391F2285</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>BC Green Games Vote Manipulator_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>

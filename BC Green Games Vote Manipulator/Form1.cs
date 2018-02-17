@@ -36,7 +36,12 @@ namespace BC_Green_Games_Vote_Manipulator
             label1.Text = "Time remaining until refresh:" + timeRemaining.ToString();
             if(timeRemaining <= 0)
             {
-                webBrowser1.Refresh();
+
+                try
+                {
+                    webBrowser1.Navigate(textBox1.Text);
+                }
+                catch {  }
                 timeRemaining = interval;
                 timesVoted++;
                 textBox3.AppendText(string.Format(System.Environment.NewLine + "Sent {0}", timesVoted));
@@ -54,6 +59,7 @@ namespace BC_Green_Games_Vote_Manipulator
             interval = int.Parse(textBox2.Text);
             label2.Text = "Current Refresh Interval:" + interval.ToString();
             timeRemaining = interval;
+            label1.Text = "Time remaining until refresh:" + timeRemaining.ToString();
 
         }
 
@@ -65,6 +71,8 @@ namespace BC_Green_Games_Vote_Manipulator
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             label3.Text = "Current URL: " + webBrowser1.Url.ToString();
+            webBrowser1.Dispose();
+            webBrowser1 = new WebBrowser();
         }
     }
 }
